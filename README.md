@@ -1,1 +1,0 @@
-# eduardo-ufmg.github.io
