@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CV — Eduardo Carvalho</title>
+  <link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- Controls: single language toggle + single PDF download -->
+      <nav class="controls" aria-label="Language and PDF controls">
+        <button id="lang-toggle" class="btn lang-btn" aria-label="Switch language">Language</button>
+        <a id="pdf-download" class="btn pdf-btn" role="button" aria-label="Download PDF" download>Download PDF</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content">
+    <h1>Eduardo Henrique Basilio de Carvalho</h1>
+<p><strong>Nascimento:</strong> 25 de outubro de 2001<br>
+<strong>Endereço:</strong> Liberdade, Belo Horizonte, Minas Gerais, Brasil<br>
+<strong>Email:</strong> <a href="mailto:eduardohbc@ufmg.br">eduardohbc@ufmg.br</a>, <a href="mailto:eduardohenriquebcarvalho@gmail.com">eduardohenriquebcarvalho@gmail.com</a></p>
+<hr>
+<h2>Escolaridade</h2>
+<ul>
+<li><strong>Concluído:</strong> Técnico em Mecatrônica — Centro Federal de Educação Tecnológica (2017–2019)</li>
+<li><strong>Cursando:</strong> Engenharia de Controle e Automação — Universidade Federal de Minas Gerais (UFMG), 9º período, previsão de formatura 2027/1</li>
+<li><strong>Futuro:</strong> Continuidade de estudos em Engenharia da Computação; Mestrado e Doutorado em Computação</li>
+</ul>
+<hr>
+<h2>Experiência Profissional</h2>
+<ul>
+<li><strong>Estágio Técnico:</strong> Betim Química — Manutenção em Impressoras Industriais (2020/1 a 2021/1)</li>
+<li><strong>Estágio Superior Não Obrigatório:</strong> RSTech — Manutenção em Equipamentos Laboratoriais (2021/2)</li>
+<li><strong>Suporte Técnico:</strong> Eletrogate — Manutenção e desenvolvimento de kits educacionais eletrônicos (2022/1 a 2024/1)</li>
+<li><strong>Futuro:</strong> Desenvolvimento de aceleradores digitais para sistemas de computação extensiva; desenvolvimento de sistemas embarcados; desenvolvimento de bibliotecas para aprendizado de máquina</li>
+</ul>
+<hr>
+<h2>Extraclasse</h2>
+<ul>
+<li><strong>Iniciação Científica:</strong> Implementação de Conversor Modbus RTU/TCP para uso em Laboratório Didático — <em>concluído em 2025/1</em></li>
+<li><strong>Iniciação Científica:</strong> Implementação de Planta Didática para Laboratório de Controle — <em>em andamento desde 2025/1</em></li>
+<li><strong>Iniciação Científica:</strong> Projeto e Implementação de Aceleradores em Hardware Periférico para Algoritmos de Classificação Baseados em Grafos — <em>em andamento desde 2024/1</em></li>
+<li><strong>Monitoria:</strong> Arquitetura e Organização de Computadores (2024/1 a 2025/2)</li>
+<li><strong>Equipe de Competição:</strong> CEFAST-Drone — Capitão da Divisão de Eletrônica (2018/1 a 2019/2)</li>
+<li>Organização de palestras do IEEE CASS — Minas Gerais (2024)</li>
+<li>Participação em conferências técnicas e científicas da universidade</li>
+</ul>
+<hr>
+<h2>Redes</h2>
+<ul>
+<li><a href="https://github.com/eduardo-ufmg">GitHub</a></li>
+<li><a href="https://gitlab.com/Eduardo-bat">GitLab</a></li>
+<li><a href="https://www.linkedin.com/in/eduardo-carvalho-9233ba37a">LinkedIn</a></li>
+</ul>
+<p><strong>Artigos e Apresentações:</strong> <a href="https://github.com/eduardo-ufmg/papers_and_presentations">https://github.com/eduardo-ufmg/papers_and_presentations</a></p>
+
+  </main>
+
+  <footer class="site-footer no-print">
+    <small>Auto-generated — source private. Generated on: <span id="build-ts"></span></small>
+  </footer>
+
+  <script>
+    (function () {
+      // Determine current language from the html[lang] attribute (set by the build step)
+      const lang = (document.documentElement.lang || '').toLowerCase() || 'pt';
+      const langBtn = document.getElementById('lang-toggle');
+      const pdfLink = document.getElementById('pdf-download');
+
+      // Default mapping
+      const mapping = {
+        en: { otherLabel: 'Português', otherHref: '/index-pt.html', pdfHref: '/cv-en.pdf', pdfLabel: 'Download PDF' },
+        pt: { otherLabel: 'English', otherHref: '/index-en.html', pdfHref: '/cv-pt.pdf', pdfLabel: 'Baixar PDF' }
+      };
+
+      const info = mapping[lang] || mapping.en;
+
+      // Set up language toggle button (navigates to the other-language page)
+      langBtn.textContent = info.otherLabel;
+      langBtn.addEventListener('click', function () {
+        // Use location.replace so browser history doesn't keep both pages for back-button simplicity
+        location.href = info.otherHref;
+      });
+
+      // Set up PDF download link
+      pdfLink.textContent = info.pdfLabel;
+      pdfLink.setAttribute('href', info.pdfHref);
+      // keep `download` attribute present to encourage download behavior
+
+      // Accessibility: give better aria-labels
+      langBtn.setAttribute('aria-label', 'Switch language to ' + info.otherLabel);
+      pdfLink.setAttribute('aria-label', info.pdfLabel + ' (' + (lang === 'pt' ? 'Portuguese' : 'English') + ')');
+
+    })();
+  </script>
+</body>
+</html>
