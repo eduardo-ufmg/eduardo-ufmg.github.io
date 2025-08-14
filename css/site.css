@@ -33,3 +33,35 @@ body {
 }
 
 .site-footer { margin-top: 20px; text-align: center; color: #444; font-size: 0.9rem; }
+
+/* Header control layout */
+.header-inner {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+/* Simple button style */
+.btn {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #0b2545;
+  background: #fff;
+  color: #0b2545;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Hover/active */
+.btn:hover { filter: brightness(0.96); transform: translateY(-1px); }
+
+/* Print: hide the header controls */
+@media print {
+  .controls, .btn { display: none !important; }
+}
+

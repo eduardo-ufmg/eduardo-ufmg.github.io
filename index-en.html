@@ -8,10 +8,13 @@
 </head>
 <body>
   <header class="site-header">
-    <nav class="lang-switch">
-      <a href="/index-en.html">English</a> · <a href="/index-pt.html">Português</a>
-      <span class="no-print"> · <a href="/cv-en.pdf" download>Download PDF (EN)</a> · <a href="/cv-pt.pdf" download>Download PDF (PT)</a></span>
-    </nav>
+    <div class="header-inner">
+      <!-- Controls: single language toggle + single PDF download -->
+      <nav class="controls" aria-label="Language and PDF controls">
+        <button id="lang-toggle" class="btn lang-btn" aria-label="Switch language">Language</button>
+        <a id="pdf-download" class="btn pdf-btn" role="button" aria-label="Download PDF" download>Download PDF</a>
+      </nav>
+    </div>
   </header>
 
   <main class="content">
@@ -60,8 +63,37 @@
   </footer>
 
   <script>
-    // insert build timestamp if present in generated HTML via replacement
-    (function(){ var el = document.getElementById('build-ts'); if(el && '2025-08-14T00:39:52.761Z'!== '2025-08-14T00:39:52.761Z') el.textContent = '2025-08-14T00:39:52.761Z'; })();
+    (function () {
+      // Determine current language from the html[lang] attribute (set by the build step)
+      const lang = (document.documentElement.lang || '').toLowerCase() || 'en';
+      const langBtn = document.getElementById('lang-toggle');
+      const pdfLink = document.getElementById('pdf-download');
+
+      // Default mapping
+      const mapping = {
+        en: { otherLabel: 'Português', otherHref: '/index-pt.html', pdfHref: '/cv-en.pdf', pdfLabel: 'Download PDF' },
+        pt: { otherLabel: 'English', otherHref: '/index-en.html', pdfHref: '/cv-pt.pdf', pdfLabel: 'Baixar PDF' }
+      };
+
+      const info = mapping[lang] || mapping.en;
+
+      // Set up language toggle button (navigates to the other-language page)
+      langBtn.textContent = info.otherLabel;
+      langBtn.addEventListener('click', function () {
+        // Use location.replace so browser history doesn't keep both pages for back-button simplicity
+        location.href = info.otherHref;
+      });
+
+      // Set up PDF download link
+      pdfLink.textContent = info.pdfLabel;
+      pdfLink.setAttribute('href', info.pdfHref);
+      // keep `download` attribute present to encourage download behavior
+
+      // Accessibility: give better aria-labels
+      langBtn.setAttribute('aria-label', 'Switch language to ' + info.otherLabel);
+      pdfLink.setAttribute('aria-label', info.pdfLabel + ' (' + (lang === 'pt' ? 'Portuguese' : 'English') + ')');
+
+    })();
   </script>
 </body>
 </html>
