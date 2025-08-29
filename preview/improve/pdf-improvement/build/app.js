@@ -26,20 +26,32 @@ document.addEventListener('DOMContentLoaded', function() {
     // Enhanced PDF download
     if (downloadBtn) {
         downloadBtn.addEventListener('click', function() {
-            // Check if PDFs are available
             const currentLang = document.documentElement.lang;
             const pdfUrl = './cv-' + currentLang + '.pdf';
             
-            // Try to download PDF first, fallback to print
+            // Try to download PDF, with better fallback handling
             fetch(pdfUrl, { method: 'HEAD' })
                 .then(response => {
                     if (response.ok) {
-                        window.open(pdfUrl, '_blank');
+                        // PDF exists, open it
+                        const link = document.createElement('a');
+                        link.href = pdfUrl;
+                        link.download = 'cv-' + currentLang + '.pdf';
+                        link.target = '_blank';
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
                     } else {
+                        // PDF not found, fall back to print
+                        console.log('PDF not found, falling back to print dialog');
                         window.print();
                     }
                 })
-                .catch(() => window.print());
+                .catch(error => {
+                    // Network error or other issue, fall back to print
+                    console.log('Error checking for PDF, falling back to print dialog:', error);
+                    window.print();
+                });
         });
     }
     
