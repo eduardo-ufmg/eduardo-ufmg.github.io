@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eduardo Henrique Basilio de Carvalho - CV</title>
+    <link rel="stylesheet" href="./css/site.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="language-selector">
+                <select id="languageDropdown">
+                    <option value="en" selected>English</option>
+                    <option value="pt" >Português</option>
+                </select>
+            </div>
+            <button id="downloadPdf" class="download-btn">
+                <i class="fas fa-download"></i>
+                Download PDF
+            </button>
+        </header>
+
+        <main class="main-content">
+            <!-- About Section -->
+            <section class="section about-section">
+                <h1 class="name">Eduardo Henrique Basilio de Carvalho</h1>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>October 25, 2001</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Liberdade, Belo Horizonte, Minas Gerais, Brazil</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="emails">
+                                <a href="mailto:eduardohbc@ufmg.br">eduardohbc@ufmg.br</a>
+                                <a href="mailto:eduardohenriquebcarvalho@gmail.com">eduardohenriquebcarvalho@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Social Links -->
+            <section class="section social-section">
+                <h2>Find me on</h2>
+                <div class="social-links">
+                    <a href="https://github.com/eduardo-ufmg" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://gitlab.com/Eduardo-bat" target="_blank" class="social-link">
+                        <i class="fab fa-gitlab"></i>
+                        <span>GitLab</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/eduardo-carvalho-9233ba37a" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/eduardo-ufmg/papers_and_presentations" target="_blank" class="social-link">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Papers & Presentations</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section class="section">
+                <h2>Education</h2>
+                <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="status-badge completed">Completed</div>
+                                <h3>Technical Degree in Mechatronics</h3>
+                                <p class="institution">Centro Federal de Educação Tecnológica (CEFET-MG)</p>
+                                <p class="period">2017 to 2019</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="status-badge in.progress">In Progress</div>
+                                <h3>Bachelor&#x27;s in Control and Automation Engineering</h3>
+                                <p class="institution">Universidade Federal de Minas Gerais (UFMG)</p>
+                                <p class="period">9th semester, expected graduation 2027/1</p>
+                            </div>
+                        </div>
+                </div>
+            </section>
+
+            <!-- Professional Experience Section -->
+            <section class="section">
+                <h2>Professional Experience</h2>
+                <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Technical Internship</h3>
+                                <p class="company">Betim Química</p>
+                                <p class="description">Maintenance of industrial printers</p>
+                                <p class="period">2020/1 to 2021/1</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Undergraduate (non-mandatory) Internship</h3>
+                                <p class="company">RSTech</p>
+                                <p class="description">Maintenance of laboratory equipment</p>
+                                <p class="period">2021/2</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Technical Support</h3>
+                                <p class="company">Eletrogate</p>
+                                <p class="description">Maintenance and development of electronic learning kits, technical support</p>
+                                <p class="period">2022/1 to 2024/1</p>
+                            </div>
+                        </div>
+                </div>
+            </section>
+
+            <!-- Extracurricular Activities Section -->
+            <section class="section">
+                <h2>Extracurricular Activities</h2>
+                <div class="activities-grid">
+                        <div class="activity-card">
+                            <div class="activity-type">Undergraduate Research</div>
+                            <h3>Implementation of a Modbus RTU/TCP converter for a teaching laboratory</h3>
+                                <p class="institution">Universidade Federal de Minas Gerais (UFMG)</p>
+                                <p class="period">completed in 2025/1</p>
+                        </div>
+                        <div class="activity-card">
+                            <div class="activity-type">Undergraduate Research</div>
+                            <h3>Implementation of a teaching testbed for a control laboratory</h3>
+                                <p class="institution">Universidade Federal de Minas Gerais (UFMG)</p>
+                                <p class="period">ongoing since 2025/1</p>
+                        </div>
+                        <div class="activity-card">
+                            <div class="activity-type">Undergraduate Research</div>
+                            <h3>Design and implementation of peripheral hardware accelerators for graph-based classification algorithms</h3>
+                                <p class="institution">Universidade Federal de Minas Gerais (UFMG)</p>
+                                <p class="period">ongoing since 2024/1</p>
+                        </div>
+                        <div class="activity-card">
+                            <div class="activity-type">Teaching Assistant</div>
+                            <h3>Computer Architecture and Organization</h3>
+                                <p class="institution">Universidade Federal de Minas Gerais (UFMG)</p>
+                                <p class="period">from 2024/1 to 2025/2</p>
+                        </div>
+                        <div class="activity-card">
+                            <div class="activity-type">Competition Team</div>
+                            <h3>CEFAST-Drone — Captain of the Electronics Division</h3>
+                                <p class="institution">Centro Federal de Educação Tecnológica (CEFET-MG)</p>
+                                <p class="period">2018/1 to 2019/2</p>
+                        </div>
+                        <div class="activity-card">
+                            <div class="activity-type">Organization</div>
+                            <h3>Co-organizer of IEEE CASS — Minas Gerais lectures</h3>
+                                <p class="institution">Universidade Federal de Minas Gerais (UFMG)</p>
+                                <p class="period">2024</p>
+                        </div>
+                        <div class="activity-card">
+                            <div class="activity-type">Participation</div>
+                            <h3>University technical and scientific conferences</h3>
+                                <p class="institution">Universidade Federal de Minas Gerais (UFMG)</p>
+                        </div>
+                        <div class="activity-card">
+                            <div class="activity-type">Course</div>
+                            <h3>Verilog Language and Application</h3>
+                                <p class="institution">Cadence Design Systems</p>
+                                <p class="period">2024/1</p>
+                        </div>
+                        <div class="activity-card">
+                            <div class="activity-type">Course</div>
+                            <h3>SystemVerilog for Design and Verification</h3>
+                                <p class="institution">Cadence Design Systems</p>
+                                <p class="period">2024/1</p>
+                        </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="./build/app.js"></script>
+</body>
+</html>
