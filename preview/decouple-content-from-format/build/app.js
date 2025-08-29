@@ -7,14 +7,28 @@ document.addEventListener('DOMContentLoaded', function() {
         languageDropdown.addEventListener('change', function(e) {
             const selectedLanguage = e.target.value;
             const currentUrl = window.location.pathname;
-            const baseUrl = currentUrl.replace(/\/[^/]*$/, '');
-            window.location.href = baseUrl + '/index-' + selectedLanguage + '.html';
+            
+            // Handle both local and GitHub Pages URLs
+            let newUrl;
+            if (currentUrl.includes('index-')) {
+                // Replace the current language file with the new one
+                newUrl = currentUrl.replace(/index-[a-z]{2}\.html$/, 'index-' + selectedLanguage + '.html');
+            } else {
+                // We're on index.html, redirect to the language-specific page
+                const baseUrl = currentUrl.replace(/\/[^/]*$/, '');
+                newUrl = baseUrl + '/index-' + selectedLanguage + '.html';
+            }
+            
+            window.location.href = newUrl;
         });
     }
     
     if (downloadBtn) {
         downloadBtn.addEventListener('click', function() {
-            window.print();
+            // Add a small delay to ensure print dialog opens properly
+            setTimeout(function() {
+                window.print();
+            }, 100);
         });
     }
 });
