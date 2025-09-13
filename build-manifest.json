@@ -2,11 +2,11 @@
   "files": {
     "index-en.html": {
       "bytes": 12553,
-      "hash": "180560cd01889efc"
+      "hash": "3baf4fcd7be0fdaa"
     },
     "index-pt.html": {
       "bytes": 12704,
-      "hash": "a23bd0be45b6bb62"
+      "hash": "327a79a6b1960e11"
     },
     "index.html": {
       "bytes": 311,
@@ -14,7 +14,7 @@
     }
   },
   "meta": {
-    "timestamp": "2025-09-10T18:23:38.715Z",
-    "commit": "b4c85c1"
+    "timestamp": "2025-09-13T13:41:11.650Z",
+    "commit": "955e032"
   }
 }
